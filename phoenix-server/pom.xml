@@ -137,6 +137,7 @@
                   <include>com.ibm.icu:icu4j-charset</include>
                   <include>com.ibm.icu:icu4j-localespi</include>
                   <include>com.lmax:disruptor</include>
+                  <include>com.google.guava:guava</include>
                 </includes>
                   <excludes>
                     <exclude>org.apache.phoenix:phoenix-server</exclude>
@@ -155,6 +156,16 @@
                   </excludes>
                 </filter>
               </filters>
+              <relocations>
+                <relocation>
+                  <pattern>com.google.common</pattern>
+                  <shadedPattern>${shaded.package}.com.google.common</shadedPattern>
+                </relocation>
+                <relocation>
+                  <pattern>org.apache.twill</pattern>
+                  <shadedPattern>${shaded.package}.org.apache.twill</shadedPattern>
+                </relocation>
+              </relocations>
             </configuration>
           </execution>
         </executions>
