@@ -335,6 +335,24 @@
               <pattern>javax.ws</pattern>
               <shadedPattern>${shaded.package}.javax.ws</shadedPattern>
             </relocation>
+
+            <!-- for DataProc compatibility -->
+            <relocation>
+              <pattern>org.ow2.asm</pattern>
+              <shadedPattern>${shaded.package}.org.ow2.asm</shadedPattern>
+            </relocation>
+            <relocation>
+              <pattern>asm</pattern>
+              <shadedPattern>${shaded.package}.asm</shadedPattern>
+            </relocation>
+            <relocation>
+              <pattern>com.google.guava</pattern>
+              <shadedPattern>${shaded.package}.com.google.guava</shadedPattern>
+            </relocation>
+            <relocation>
+              <pattern>com.google.inject</pattern>
+              <shadedPattern>${shaded.package}.com.google.inject</shadedPattern>
+            </relocation>
           </relocations>
         </configuration>
         <executions>
