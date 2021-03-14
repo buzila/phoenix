@@ -113,6 +113,26 @@
                     <file>${project.basedir}/../NOTICE</file>
                   </transformer>
                 </transformers>
+                <relocations>
+
+                  <!-- for DataProc compatibility -->
+                  <relocation>
+                    <pattern>org.ow2.asm</pattern>
+                    <shadedPattern>${shaded.package}.org.ow2.asm</shadedPattern>
+                  </relocation>
+                  <relocation>
+                    <pattern>asm</pattern>
+                    <shadedPattern>${shaded.package}.asm</shadedPattern>
+                  </relocation>
+                  <relocation>
+                    <pattern>com.google.guava</pattern>
+                    <shadedPattern>${shaded.package}.com.google.guava</shadedPattern>
+                  </relocation>
+                  <relocation>
+                    <pattern>com.google.inject</pattern>
+                    <shadedPattern>${shaded.package}.com.google.inject</shadedPattern>
+                  </relocation>
+                </relocations>
                 <artifactSet>
                 <includes>
                   <include>org.apache.phoenix:phoenix-core</include>
@@ -138,6 +158,9 @@
                   <include>com.ibm.icu:icu4j-localespi</include>
                   <include>com.lmax:disruptor</include>
                   <include>com.google.guava:guava</include>
+                  <include>com.google.inject:guice</include>
+                  <include>org.ow2.asm:asm</include>
+                  <include>asm:asm</include>
                 </includes>
                   <excludes>
                     <exclude>org.apache.phoenix:phoenix-server</exclude>
